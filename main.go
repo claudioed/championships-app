@@ -64,7 +64,6 @@ func main() {
 }
 
 func Health(c echo.Context) error {
-
 	return c.JSON(200, &HealthData{Status: "UP"})
 }
 
@@ -74,9 +73,9 @@ type HealthData struct {
 
 func GetChampionship(c echo.Context) error {
 	champ := &Championship{
-		Name:    "CONMEBOL Libertadores",
-		Title:   "Copa Libertadores da América",
-		Country: "South America",
+		Name:    "Uefa",
+		Title:   "Champions League",
+		Country: "Europe",
 	}
 	return c.JSON(http.StatusOK, champ)
 }
