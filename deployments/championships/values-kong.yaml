@@ -24,7 +24,6 @@ serviceAccount:
   name: ""
 
 podAnnotations:
-  linkerd.io/inject: enabled
   ingress.kubernetes.io/service-upstream: "true"
   nginx.ingress.kubernetes.io/service-upstream : "true"
 
