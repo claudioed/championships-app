@@ -50,6 +50,7 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: "kong"
     konghq.com/override: championships-do-not-preserve-host
+    konghq.com/plugins: prometheus-championships,championships-otel
 
   hosts:
     - paths:
