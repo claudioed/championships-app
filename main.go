@@ -13,7 +13,6 @@ import (
 
 	"go.opentelemetry.io/contrib/instrumentation/github.com/labstack/echo/otelecho"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/exporters/jaeger"
 	"go.opentelemetry.io/otel/propagation"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
@@ -117,9 +116,6 @@ type HealthData struct {
 }
 
 func GetChampionship(c echo.Context) error {
-	id := c.Param("id")
-	_, span := tracer.Start(c.Request().Context(), "getChampionship", oteltrace.WithAttributes(attribute.String("id", id)))
-	defer span.End()
 	champ := &Championship{
 		Name:    "Uefa",
 		Title:   "Champions League",
